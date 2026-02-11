@@ -9,160 +9,189 @@
       content="Portfolio of Parag Tiwari, a professional Program Manager specializing in healthcare diagnostics and clinical operations at OneCell Diagnostics."
     />
     <link rel="stylesheet" href="style.css" />
-    <!-- Lucide Icons -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Libraries -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   </head>
   <body data-theme="dark">
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+    
     <div class="bg-mesh"></div>
+    <div class="cursor-glow"></div>
 
     <nav class="glass">
-      <div class="brand">PT</div>
-      <div class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
-        <i data-lucide="moon"></i>
-      </button>
+        <div class="brand">PARAG<span class="dot">.</span></div>
+        <div class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <div class="nav-indicator"></div>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                <i data-lucide="moon"></i>
+            </button>
+        </div>
     </nav>
 
     <header class="hero" id="hero">
-      <div class="hero-badge reveal">Program Manager @ OneCell Diagnostics</div>
-      <h1 class="reveal">
-        <span>Programming the Future of</span>
-        <span class="brand">Diagnostics</span>
-      </h1>
-      <p class="reveal">
-        Parag Tiwari. Bridging the gap between clinical excellence and
-        innovative healthcare technology.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#experience" class="btn btn-primary"
-          >View Experience <i data-lucide="arrow-right"></i
-        ></a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-      </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge reveal">
+                    <span class="status-dot"></span>
+                    Program Manager @ OneCell Diagnostics
+                </div>
+                <h1 class="reveal">
+                    Building the <span class="gradient-text">Future</span> of <br>
+                    <span class="outline-text">Digital Health</span>
+                </h1>
+                <p class="reveal">Parag Tiwari specializes in orchestrating high-impact diagnostic programs with a focus on clinical precision and AI innovation.</p>
+                <div class="hero-actions reveal">
+                    <a href="#experience" class="btn btn-primary magnetic">
+                        <span>Explore Journey</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary magnetic">Let's Talk</a>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="float-element card-1 glass">
+                    <i data-lucide="activity"></i>
+                    <span>Clinical Excellence</span>
+                </div>
+                <div class="float-element card-2 glass">
+                    <i data-lucide="cpu"></i>
+                    <span>AI Integration</span>
+                </div>
+                <div class="hero-image-container glass">
+                    <img src="hero-bg.png" alt="Futuristic Healthcare" class="parallax-img">
+                    <div class="glow-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll</span>
+        </div>
     </header>
 
     <section id="about" class="about">
-      <h2 class="section-title reveal">About <span>Me</span></h2>
-      <div class="about-grid">
-        <div class="about-image glass reveal">
-          <img
-            src="hero-bg.png"
-            alt="Parag Tiwari Background"
-            style="filter: brightness(0.7)"
-          />
-        </div>
-        <div class="about-content reveal">
-          <p>
-            As a Program Manager at <strong>OneCell Diagnostics</strong>, I lead
-            cross-functional initiatives that modernize clinical workflows and
-            enhance diagnostic precision. My approach combines strategic
-            foresight with a deep understanding of the healthcare technology
-            ecosystem.
-          </p>
-          <br />
-          <p>
-            I am passionate about building scalable solutions that empower
-            clinicians and improve patient outcomes through high-fidelity AI
-            integration and robust operational frameworks.
-          </p>
+        <div class="container bento-grid">
+            <div class="bento-header reveal">
+                <h2 class="section-title">Bridging <span class="gradient-text">Clinical</span> & <span class="outline-text">Tech</span></h2>
+                <p class="section-subtitle">Dedicated to transforming oncology diagnostics through strategic program management.</p>
+            </div>
+            
+            <div class="bento-item about-main glass reveal">
+                <div class="bento-content">
+                    <p>As a Program Manager at <strong>OneCell Diagnostics</strong>, I orchestrate the convergence of clinical precision and digital infrastructure. My mission is to build systems that don't just process data, but drive patient outcomes.</p>
+                </div>
+            </div>
 
-          <div class="skills-grid">
-            <div class="skill-card glass reveal">
-              <i data-lucide="target"></i>
-              <h3>Strategic Planning</h3>
+            <div class="bento-item stats glass reveal">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Clinical Focus</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">AI</span>
+                    <span class="stat-label">Driven Integration</span>
+                </div>
             </div>
-            <div class="skill-card glass reveal">
-              <i data-lucide="activity"></i>
-              <h3>Clinical Ops</h3>
+
+            <div class="bento-item focus-area glass reveal">
+                <h3>Core Focus</h3>
+                <ul class="focus-list">
+                    <li><i data-lucide="check-circle"></i> Precision Medicine</li>
+                    <li><i data-lucide="check-circle"></i> Diagnostic Scalability</li>
+                    <li><i data-lucide="check-circle"></i> Strategic Frameworks</li>
+                </ul>
             </div>
-            <div class="skill-card glass reveal">
-              <i data-lucide="cpu"></i>
-              <h3>Health Tech</h3>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <section id="experience" class="experience">
-      <h2 class="section-title reveal">Professional <span>Journey</span></h2>
-      <div class="timeline">
-        <div class="timeline-item glass reveal">
-          <div class="timeline-date">2023 - Present</div>
-          <h3>Program Manager</h3>
-          <div class="timeline-company">OneCell Diagnostics</div>
-          <p>
-            Leading strategic programs to integrate AI-driven diagnostics into
-            clinical workflows. Coordinating between engineering, clinical, and
-            business teams to deliver high-impact healthcare solutions.
-          </p>
+        <div class="container">
+            <h2 class="section-title reveal">The <span class="gradient-text">Trajectory</span></h2>
+            <div class="timeline-v2">
+                <div class="experience-card glass reveal" data-tilt>
+                    <div class="exp-header">
+                        <div class="exp-logo glass"><i data-lucide="briefcase"></i></div>
+                        <div class="exp-info">
+                            <h3>Program Manager</h3>
+                            <span class="company">OneCell Diagnostics</span>
+                        </div>
+                        <div class="exp-date">2023 - Present</div>
+                    </div>
+                    <p>Leading the digital transformation of oncology diagnostics. Focused on scaling clinical operations and integrating next-gen AI platforms into the diagnostic pipeline.</p>
+                    <div class="exp-tags">
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Clinical Ops</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                <!-- Additional items can be added here -->
+            </div>
         </div>
-        <!-- More items can be added here -->
-      </div>
     </section>
 
     <section id="skills" class="skills">
-      <h2 class="section-title reveal">Core <span>Competencies</span></h2>
-      <div class="skills-grid">
-        <div class="skill-card glass reveal">
-          <i data-lucide="clipboard-list"></i>
-          <h3>Project Management</h3>
-          <p>Agile methodologies, risk mitigation, and lifecycle management.</p>
+        <div class="container grid-3">
+            <div class="skill-card-v2 glass reveal" data-tilt>
+                <div class="skill-icon-box"><i data-lucide="layout"></i></div>
+                <h3>Project Governance</h3>
+                <p>Advanced lifecycle management and cross-functional orchestration for complex health-tech environments.</p>
+            </div>
+            <div class="skill-card-v2 glass reveal" data-tilt>
+                <div class="skill-icon-box"><i data-lucide="shield-check"></i></div>
+                <h3>Clinical Quality</h3>
+                <p>Ensuring absolute precision and regulatory compliance in high-stakes diagnostic programs.</p>
+            </div>
+            <div class="skill-card-v2 glass reveal" data-tilt>
+                <div class="skill-icon-box"><i data-lucide="zap"></i></div>
+                <h3>Agile Innovation</h3>
+                <p>Rapid deployment of AI-driven features while maintaining operational stability and clinical trust.</p>
+            </div>
         </div>
-        <div class="skill-card glass reveal">
-          <i data-lucide="users"></i>
-          <h3>Leadership</h3>
-          <p>Cross-functional team coordination and talent development.</p>
-        </div>
-        <div class="skill-card glass reveal">
-          <i data-lucide="bar-chart-3"></i>
-          <h3>Data Analysis</h3>
-          <p>Leveraging analytics for operational excellence.</p>
-        </div>
-      </div>
     </section>
 
     <section id="contact" class="contact">
-      <h2 class="section-title reveal">Let's <span>Connect</span></h2>
-      <div class="contact-container">
-        <form class="contact-form glass reveal">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="John Doe" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="john@example.com"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              rows="5"
-              placeholder="How can I help you?"
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style="width: 100%; justify-content: center"
-          >
-            Send Message <i data-lucide="send"></i>
-          </button>
-        </form>
-      </div>
+        <div class="container">
+            <div class="contact-card glass reveal">
+                <div class="contact-info">
+                    <h2 class="section-title">Open for <br><span class="gradient-text">Collaboration</span></h2>
+                    <p>Let's discuss how we can build the next generation of diagnostics together.</p>
+                    <div class="contact-details">
+                        <a href="mailto:hello@parag.me" class="contact-link"><i data-lucide="mail"></i> hello@parag.me</a>
+                        <a href="#" class="contact-link"><i data-lucide="linkedin"></i> Connect on LinkedIn</a>
+                    </div>
+                </div>
+                <form class="contact-form-v2">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary magnetic">
+                        <span>Initiate Project</span>
+                        <i data-lucide="send"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <footer>
