@@ -6,36 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
-    // 2. Custom Cursor Glow
-    const cursorGlow = document.querySelector('.cursor-glow');
-    document.addEventListener('mousemove', (e) => {
-        gsap.to(cursorGlow, {
-            x: e.clientX,
-            y: e.clientY,
-            duration: 0.5,
-            ease: 'power2.out'
-        });
-
-        // Hover Effect for interactive elements
-        const target = e.target;
-        if (target.closest('a') || target.closest('button') || target.closest('.glass')) {
-            gsap.to(cursorGlow, {
-                width: 600,
-                height: 600,
-                backgroundColor: 'rgba(0, 242, 255, 0.12)',
-                duration: 0.4
-            });
-        } else {
-            gsap.to(cursorGlow, {
-                width: 400,
-                height: 400,
-                backgroundColor: 'rgba(0, 242, 255, 0.08)',
-                duration: 0.4
-            });
-        }
-    });
-
-    // 3. Three.js Background (Digital Connectivity Mesh)
+    // 2. Three.js Background (Digital Connectivity Mesh)
     const initThree = () => {
         const canvas = document.querySelector('#bg-canvas');
         if (!canvas) return;
@@ -68,25 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         camera.position.z = 5;
 
-        // Mouse Move Effect on Particles
-        let mouseX = 0, mouseY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-        });
-
         const animate = () => {
             requestAnimationFrame(animate);
             points.rotation.y += 0.001;
             points.rotation.x += 0.0005;
-
-            // Subtle mouse following
-            gsap.to(points.rotation, {
-                x: mouseY * 0.2,
-                y: mouseX * 0.2,
-                duration: 2,
-                ease: 'power2.out'
-            });
 
             renderer.render(scene, camera);
         };
